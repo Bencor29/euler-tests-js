@@ -77,7 +77,52 @@ ut.testCase('Test sum multiples',{
         }
 
         ut.assert('Test without parameters and limit 1000001 should throw exception', thrown);
-    }
+    },
+    'test-m1-suplimit-ex':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000,1001,3);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with m1 > 1000 should throw exception', thrown);
+    },
+    'test-m2-suplimit-ex':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000,3,1001);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with m1 > 1000 should throw exception', thrown);
+    },
+    'test-m1-notanumber':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000,'toto',10);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with m1 not a number throw exception', thrown);
+    },
+    'test-m2-notanumber':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000,10,'toto');
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with m2 not a number throw exception', thrown);
+    },
+    
 });
 
 const nbExecutions = 10000;
