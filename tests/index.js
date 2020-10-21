@@ -12,7 +12,7 @@ ut.testCase('Test sum multiples',{
     'test-params7-9-limit1000000':  function() {
         ut.assert('Test with parameters (7, 9) and limit 1000000 should return 233168',ind.sumMultiples(1000000, 7, 9) === 119047880952)
     },
-    'test-no-limit1000000negative-ex':  function() {
+    'test-noparams-limitnegative-ex':  function() {
         let thrown = false;
 
         try {
@@ -22,6 +22,50 @@ ut.testCase('Test sum multiples',{
         }
 
         ut.assert('Test without multiples parameters and limit -5 should throw exception', thrown);
+    },
+    'test-params1-negative-limit1000':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000, 1, -5);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with parameters (1, -5) and limit 1000 should throw exception', thrown);
+    },
+    'test-paramsnegative-1-limit1000':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000, -5, 1);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with parameters (-5, 1) and limit 1000 should throw exception', thrown);
+    },
+    'test-params1-float-limit1000':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000, 1, 5.89);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with parameters (1, 5.89) and limit 1000 should throw exception', thrown);
+    },
+    'test-paramsfloat-1-limit1000':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000, 5.89, 1);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with parameters (5.89, 1) and limit 1000 should throw exception', thrown);
     }
 });
 
