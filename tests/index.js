@@ -1,4 +1,4 @@
 // import('./lib.js')
 let ut = require('./lib.js');
 
-ut.assert('test', false);
+ut.assert('Ceci est le message d\'erreur', false);
