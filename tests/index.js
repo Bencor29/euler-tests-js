@@ -4,7 +4,7 @@ let ind = require('../src/index.js');
 
 ut.testCase('Test sum multiples',{
     'test-noparams-limit1000':  function() {
-        ut.assert('Test without multiples parameters and limit 1000 should return 233168',ind.sumMultiples(1000) === 233168)
+        ut.assert('Test without parameters and limit 1000 should return 233168',ind.sumMultiples(1000) === 233168)
     },
     'test-params5-7-limit100000':  function() {
         ut.assert('Test with parameters (5, 7) and limit 100000 should return 233168',ind.sumMultiples(100000, 5, 7) === 1571321430)
@@ -21,7 +21,7 @@ ut.testCase('Test sum multiples',{
             thrown = true;
         }
 
-        ut.assert('Test without multiples parameters and limit -5 should throw exception', thrown);
+        ut.assert('Test without parameters and limit -5 should throw exception', thrown);
     },
     'test-params1-negative-limit1000':  function() {
         let thrown = false;
@@ -66,6 +66,17 @@ ut.testCase('Test sum multiples',{
         }
 
         ut.assert('Test with parameters (5.89, 1) and limit 1000 should throw exception', thrown);
+    },
+    'test-noparams-limit1000001':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples(1000001);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test without parameters and limit 1000001 should throw exception', thrown);
     }
 });
 
