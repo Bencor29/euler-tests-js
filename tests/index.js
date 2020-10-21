@@ -109,7 +109,7 @@ ut.testCase('Test sum multiples',{
             thrown = true;
         }
 
-        ut.assert('Test with m1 not a number throw exception', thrown);
+        ut.assert('Test with m1 not a number should throw exception', thrown);
     },
     'test-m2-notanumber':  function() {
         let thrown = false;
@@ -120,8 +120,8 @@ ut.testCase('Test sum multiples',{
             thrown = true;
         }
 
-        ut.assert('Test with m2 not a number throw exception', thrown);
-    }, 
+        ut.assert('Test with m2 not a number should throw exception', thrown);
+    },
     'test-limit-notanumber':  function() {
         let thrown = false;
 
@@ -132,13 +132,27 @@ ut.testCase('Test sum multiples',{
         }
 
         ut.assert('Test with limit not a number throw exception', thrown);
+    },
+    'test-boucle': function () {
+        let tab1 = [];
+        let failed = true;
+
+        for (let i = 1; i < 1000; i++) {
+            tab1[i] = ind.sumMultiples(10000, 3*i, 5*i);
+        }
+
+        for (let i = 1; i < 1000; i++) {
+            failed &= tab1[i] === ind.sumMultiples(10000, 3*i, 5*i);
+        }
+
+        ut.assert('Test result equals after iteration', failed);
     }
     
 });
 
 const nbExecutions = 10000;
-let timeExecutionMs = ut.benchmark(ind.sumMultiples, nbExecutions, [1000,3,5]);
-console.log(`\x1b[96mBenchmark for ${nbExecutions} executions of function sumMultiples with params (limit = 1000, m1 = 3, m2 = 5) :: ${timeExecutionMs} ms\x1b[0m` );
+let timeExecutionMs = ut.benchmark(ind.sumMultiples, nbExecutions, [10000,3,5]);
+console.log(`\x1b[96mBenchmark for ${nbExecutions} executions of function sumMultiples with params (limit = 10000, m1 = 3, m2 = 5) :: ${timeExecutionMs} ms\x1b[0m` );
 
 
 
