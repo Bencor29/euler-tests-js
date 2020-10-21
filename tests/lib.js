@@ -1,17 +1,18 @@
 function assert(message, expr) {
-    if (!expr) {
-        output(false, message);
-        throw new Error(message);       
-    }
-    output(true, message);
+  if (!expr) {
+    output(false, message);
+    throw new Error(message);
+  }
+  output(true, message);
 }
 
-function output(result, message){
-    message += result ? ' : SUCCESS' : ' : FAILURE';
-    console.log(message);
+function output(result, message) {
+  message += result ? " : SUCCESS" : " : FAILURE";
+  console.log(message);
 }
 
 function testCase(message, tests){
+    console.log(message);
     let total = 0;
     let succeed = 0;
     for(let test in tests){
@@ -29,7 +30,7 @@ function testCase(message, tests){
     }
 
     let testsResult = 'succeed tests ' + succeed + '/' + total ;
-    console.log(`${message}\n${testsResult}`);
+    console.log(testsResult);
 }
 
 function benchmark(func, executions) {
