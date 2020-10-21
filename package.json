@@ -1,0 +1,19 @@
+{
+  "name": "euler",
+  "version": "1.0.0",
+  "description": "Cours DevOps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/h42m0ny/euler.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/h42m0ny/euler/issues"
+  },
+  "homepage": "https://gitlab.com/h42m0ny/euler#readme"
+}
