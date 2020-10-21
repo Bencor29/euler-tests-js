@@ -70,7 +70,7 @@ ut.testCase('Test sum multiples',{
 });
 const nbExecutions = 10000;
 let timeExecutionMs = ut.benchmark(ind.sumMultiples, nbExecutions, [1000,3,5])
-console.log(`Benchmark for ${nbExecutions} executions of function sumMultiples with param limit = 1000,m1 = 3, m2 = 5 for params multiples :: ${timeExecutionMs} ms` );
+console.log(`\x1b[96mBenchmark for ${nbExecutions} executions of function sumMultiples with param limit = 1000,m1 = 3, m2 = 5 for params multiples :: ${timeExecutionMs} ms\x1b[0m` );
 
 
 
