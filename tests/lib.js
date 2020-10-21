@@ -34,11 +34,11 @@ function testCase(message, tests){
     console.log(testsResult);
 }
 
-function benchmark(func, executions) {
+function benchmark(func, executions,...args) {
     let start_ms = new Date().getMilliseconds();
 
     for (let i = 0; i < executions; i++) {
-        func();
+        func(...args);
     }
 
     let stop_ms = new Date().getMilliseconds();
