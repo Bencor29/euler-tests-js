@@ -1,9 +1,10 @@
 function sumMultiples(limit, m1=3, m2=5) {
+
     if (limit <= 0) {
         throw new Error("Limit must be superior to 0")
     }
 
-    if (parseInt(limit) == NaN ){
+    if (! (typeof limit == 'number') ){
         throw new Error("Limit must be an integer")
     }
 

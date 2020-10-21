@@ -43,7 +43,7 @@ function benchmark(func, executions,...args) {
     let start_ms = new Date().getMilliseconds();
 
     for (let i = 0; i < executions; i++) {
-        func(...args);
+        func(1000);
     }
 
     let stop_ms = new Date().getMilliseconds();

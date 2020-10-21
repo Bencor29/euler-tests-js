@@ -121,7 +121,18 @@ ut.testCase('Test sum multiples',{
         }
 
         ut.assert('Test with m2 not a number throw exception', thrown);
-    },
+    }, 
+    'test-limit-notanumber':  function() {
+        let thrown = false;
+
+        try {
+            ind.sumMultiples('prp',3,5);
+        } catch (e) {
+            thrown = true;
+        }
+
+        ut.assert('Test with limit not a number throw exception', thrown);
+    }
     
 });
 
