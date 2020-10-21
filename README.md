@@ -4,3 +4,7 @@
 
 `npm run test`
 
+## Développeurs
+
+Harmony Leclaire
+Benjamin Cornou
