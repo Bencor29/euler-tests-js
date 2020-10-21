@@ -68,5 +68,10 @@ ut.testCase('Test sum multiples',{
         ut.assert('Test with parameters (5.89, 1) and limit 1000 should throw exception', thrown);
     }
 });
+const nbExecutions = 10000;
+let timeExecutionMs = ut.benchmark(ind.sumMultiples, nbExecutions, [1000,3,5])
+console.log(`Benchmark for ${nbExecutions} of function sumMultiples with param limit = 1000,m1 = 3, m2 = 5 for params multiples :: ${timeExecutionMs} ms` );
+
+
 
 
