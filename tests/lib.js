@@ -45,13 +45,7 @@ function benchmark(func, executions) {
 }
 
 module.exports = {
-<<<<<<< HEAD
-  assert: assert,
-  testCase: testCase,
-};
-=======
     assert: assert,
     testCase: testCase,
     benchmark: benchmark
 };
->>>>>>> d75df1a5442d46482bdeb938b717e6058c9ad782
