@@ -16,6 +16,7 @@ function testCase(message, tests){
     console.log(`\x1b[96m${message}\x1b[0m`);
     let total = 0;
     let succeed = 0;
+    let failed = false;
     for(let test in tests){
         total++;
         try {
@@ -26,12 +27,16 @@ function testCase(message, tests){
                 throw new Error(`Unknown member '${test}'`);
             }
         }catch(err){
-            // TODO Faire un truc sympa ici
+            failed = true;
         }
     }
 
     let testsResult = '\x1b[32mSucceed tests ' + succeed + '/' + total + '\x1b[0m';
     console.log(testsResult);
+
+    if (failed) {
+        throw new Error('Test case failed');
+    }
 }
 
 function benchmark(func, executions,...args) {
