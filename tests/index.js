@@ -98,7 +98,7 @@ ut.testCase('Test sum multiples',{
             thrown = true;
         }
 
-        ut.assert('Test with m1 > 1000 should throw exception', thrown);
+        ut.assert('Test with m2 > 1000 should throw exception', thrown);
     },
     'test-m1-notanumber':  function() {
         let thrown = false;
